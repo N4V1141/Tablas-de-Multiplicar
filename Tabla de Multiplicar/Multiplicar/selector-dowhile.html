@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Multiplicar (do while)</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; }
+        table { margin: 20px auto; border-collapse: collapse; background: #fff; }
+        th, td { border: 1px solid #888; padding: 8px 12px; text-align: center; }
+        select { margin: 20px auto; display: block; font-size: 16px; }
+        h1 { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Multiplicar (do while)</h1>
+        <select id="numero">
+        <option value="" disabled selected>Selecciona un número</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <div id="tabla"></div>
+    <script>
+    numero.onchange = () => {
+        let v = numero.value, t = '<table><tr><th>Multiplicación</th><th>Resultado</th></tr>', i = 1;
+        if(v) {
+            do {
+                t += `<tr><td>${v} x ${i}</td><td>${v*i}</td></tr>`;
+                i++;
+            } while(i <= 10);
+            t += '</table>';
+            tabla.innerHTML = t;
+        } else {
+            tabla.innerHTML = '';
+        }
+    }
+    </script>
+</body>
+</html>

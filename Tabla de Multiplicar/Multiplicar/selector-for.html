@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Multiplicar (for)</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; }
+        table { margin: 20px auto; border-collapse: collapse; background: #fff; }
+        th, td { border: 1px solid #888; padding: 8px 12px; text-align: center; }
+        select { margin: 20px auto; display: block; font-size: 16px; }
+        h1 { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Multiplicar (for)</h1>
+    <select id="numero">
+        <option value="" disabled selected>Selecciona un número</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <div id="tabla"></div>
+    <script>
+        numero.onchange = function() {
+            let value = this.value;
+            let html = '<table><tr><th>Multiplicación</th><th>Resultado</th></tr>';
+            for(let i = 1; i <= 10; i++) {
+                html += `<tr><td>${value} x ${i}</td><td>${value * i}</td></tr>`;
+            }
+            html += '</table>';
+            tabla.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
